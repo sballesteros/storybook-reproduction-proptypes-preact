@@ -1,22 +1,13 @@
-# storybook-reproduction-proptypes-preact
+# Reproduction for https://github.com/storybookjs/storybook/issues/18698
 
-## CLI Commands
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# test the production build locally
-npm run serve
-
-# run tests with jest and enzyme
-npm run test
-```
-
-For detailed explanation on how things work, checkout the [CLI Readme](https://github.com/developit/preact-cli/blob/master/README.md).
+- Visit the docpage for the Primary Button story (the underlying component contains PropTypes with JSDocs comment).
+  ```js
+  Button.propTypes = {
+    /**
+     * Is this the principal call to action on the page?
+     */
+    primary: PropTypes.bool,
+    //...
+  };
+  ```
+- Notice the lack of description in the props table.
